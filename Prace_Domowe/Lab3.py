@@ -33,7 +33,7 @@ import random
 #         lista2.append(y)
 # print(lista2)
 
-# #Zad. 3
+# # #Zad. 3
 # slownik = {'szt.' : ["Mango", "Pączek", "Bluza"],
 #            'litr' : ["Pepsi","Olej"],
 #            'kg' : ["Mąka","Banany"]}
@@ -42,7 +42,7 @@ import random
 # # for key in slownik.items():
 # #     if key == 'szt.'
 # #         sztuki.append(values)
-# sztuki =  [x for x in slownik if slownik[x]=='szt.']
+# sztuki =  [slownik[x] for x in slownik.keys() if x=='szt.']
 # print(sztuki)
 
 # #Zad. 4
