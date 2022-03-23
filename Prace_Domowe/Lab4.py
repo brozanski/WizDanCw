@@ -26,8 +26,9 @@ import math
 #     for linia in plik:
 #         print(linia, end='')
 
+
 # #Zad.4
-#class NaZakupy():
+# class NaZakupy():
 #     """Zakupy"""
 #     nazwa_produktu = ""
 #     ilosc = 0
@@ -38,19 +39,15 @@ import math
 #             self.ilosc = ilosc
 #             self.jednostka_miary = jednostka_miary
 #             self.cena_jed  = cena_jed
-# 
-#     def wyświetl_produkt(self):
+#
+#     def wyswietl_produkt(self):
 #         print(self.nazwa_produktu, self.ilosc, self.jednostka_miary, self.cena_jed)
 #     def ile_produktu(self):
 #         print(str(self.ilosc) + " " + self.jednostka_miary)
 #     def ile_kosztuje(self):
 #         kwota = self.cena_jed * self.ilosc
 #         print(kwota)
-# 
-# zakup = NaZakupy("Ziemniaki",3,"kg",2)
-# #zakup.wyswietl_produkt()   #dlaczego wyrzuca błąd?
-# zakup.ile_produktu()
-# zakup.ile_kosztuje()
+
 
 # #Zad. 6
 # class Robaczek:
