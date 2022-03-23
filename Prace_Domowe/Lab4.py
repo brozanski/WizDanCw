@@ -47,6 +47,10 @@ import math
 #     def ile_kosztuje(self):
 #         kwota = self.cena_jed * self.ilosc
 #         print(kwota)
+# zakup = NaZakupy("Ziemniaki",3,"kg",2)
+# zakup.wyswietl_produkt()   #dlaczego wyrzuca błąd?
+# zakup.ile_produktu()
+# zakup.ile_kosztuje()
 
 
 # #Zad. 6
