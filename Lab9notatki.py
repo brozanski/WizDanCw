@@ -45,3 +45,41 @@ plt.legend(['Wartości', 'Średnia krocząca'])
 plt.show()
 
 
+
+#Zadania z pliku 'pandas wykresy zadania.docx'
+
+#Zadanie 1 - Stwórz wykres liniowy, który wyświetli liczbę urodzonych dzieci dla każdego roku.
+xlsx = pd.ExcelFile('imiona.xlsx')      #biblioteka openpyxl
+df = pd.read_excel(xlsx, header=0)
+
+df = pd.DataFrame(df)
+grupa = df.groupby('Rok').agg({'Liczba': ['sum']})
+grupa.plot(kind='line', ylabel='Liczba urodzonych', xlabel='Rok',
+           rot=0, legend=True, title='Liczba urodzonych dzieci dla każdego roku', color='magenta')
+plt.legend(loc='upper left')
+plt.show()
+
+#Zadanie 2 - Stwórz wykres słupkowy, który wyświetli liczbę urodzonych chłopców i dziewczynek z całego zbioru.
+df = pd.DataFrame(df)
+grupa = df.groupby('Plec').agg({'Liczba': ['sum']})
+grupa.plot(kind='bar', ylabel='Liczba urodzonych', xlabel='Płeć',
+           rot=0, legend=True, title='Liczba urodzonych chłopców i dziewczynek', color='blue')
+plt.legend(loc='upper left')
+plt.show()      #jak zamienic 10^6 * ilosc na zwykly zapis?
+
+#Zadanie 3 - Wykres kołowy z waściartomi % ukazującymi ilość urodzonych chłopców i dziewczynek w ostatnich 5 latach z datasetu.
+grupa = df.groupby('Plec').agg({'Liczba': ['sum']})     #Jak to połączyć z zakresem lat ?
+grupa.plot(kind='pie', subplots=True, autopct='%.2f %%',
+           fontsize=20, figsize=(6, 6))
+plt.legend(loc='upper left')
+plt.show()
+
+#Zadanie 4 - Wyświetl na pomocą wykresu słupkowego ilość złożonych zamówień przez poszczególnych sprzedawców (zbiór danych zamówienia.csv).
+# df = pd.read_csv('zamowienia.csv', header=0, sep=';', decimal='.')
+# df = pd.DataFrame(df)
+# ilosc_zamowien = df['Sprzedawca'].value_counts
+# grupa = df.groupby('Sprzedawca').agg({ilosc_zamowien: ['sum']})
+# grupa.plot(kind='bar', ylabel='Liczba złożonych zamówien', xlabel='Sprzedawca',
+#            rot=0, legend=True, title='ilość złożonych zamówień przez poszczególnych sprzedawców', color='blue')
+# plt.legend(loc='upper left')
+# plt.show()
